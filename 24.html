@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <p>FILL THE BELOW FIELDS</p>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!---- included css for ux color designs-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!---- included css for ux color designs-->
+
+    <script>
+      $(document).ready(function () {
+        // On button click, get value
+        // of input control Show alert
+        // message box
+
+        $("#first").click(function () {
+          var username = $("#a1").val();
+          var password = $("#a2").val();
+          var age = $("#a3").val();
+          var isMale = $("#b1").is(":checked");
+          var isFemale = $("#b2").is(":checked");
+          var pet = $("#petselect").val();
+
+          var textarea = "\n" + username + "\n" + password + "\n" + age;
+
+          if (isMale) {
+            textarea = textarea.concat("\nmale");
+          } else {
+            textarea = textarea.concat("\nfemale");
+          }
+          textarea = textarea.concat("\n" + pet);
+
+          $("#a4").append(textarea);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <br /><br />
+    <input type="text" placeholder="username" id="a1" />
+    <br />
+    <br />
+    <input type="password" placeholder="password" id="a2" />
+    <br />
+    <br />
+    <input type="number" placeholder="age" id="a3" />
+    <br />
+    <br />
+    <input type="radio" name="group1" value="male" id="b1" /> male
+    <br />
+    <input type="radio" name="group1" value="female" id="b2" /> female
+    <br />
+    <label for="pet">Choose a pet:</label>
+
+    <select id="petselect">
+      <option value="">--Please choose an option--</option>
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="hamster">Hamster</option>
+      <option value="parrot">Parrot</option>
+      <option value="spider">Spider</option>
+      <option value="goldfish">Goldfish</option>
+    </select>
+    <br />
+    <br />
+
+    <button
+      type="button"
+      style="background-color: green"
+      id="first"
+      class="btn btn-success btn-sm"
+    >
+      submit
+    </button>
+
+    <br />
+
+    <textarea id="a4" cols="10" rows="10"> </textarea>
+  </body>
+</html>

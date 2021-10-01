@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // On button click, get value
+        // of input control Show alert
+        // message box
+        $("#getValBtnID").click(function () {
+          var inputString = $("#userInputID").val();
+           alert(inputString);
+
+        });
+      });
+    </script>
+  </head>
+
+       <body>
+    <br /><br />
+
+    <input type="text" placeholder = "username" id="userInputID" />
+    <br /><br />
+     <button type="button" id="getValBtnID">submit</button>
+  </body>
+</html>
